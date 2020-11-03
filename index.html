@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Ecommerce Slider</title>
+
+ <!-- Css Styles -->
+ <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+ <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+     crossorigin="anonymous" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css"
+     integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g=="
+     crossorigin="anonymous" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/fontawesome.min.js"
+     integrity="sha512-kI12xOdWTh/nL2vIx5Yf3z/kJSmY+nvdTXP2ARhepM/YGcmo/lmRGRttI3Da8FXLDw0Y9hRAyZ5JFO3NrCvvXA=="
+     crossorigin="anonymous"></script>
+
+ <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+ <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+ <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+ <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+ <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+ <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+ <link rel="stylesheet" href="css/style.css" type="text/css">
+
+ <link href="css/multislider.css" rel="stylesheet">
+ <link href="css/slider_item.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css"
+     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!--page-icon------------>
+    <link rel="shortcut icon" href="images/logo.png">
+   <link rel="stylesheet" href="css/lightSlider.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.js"
+        integrity="sha512-sww7U197vVXpRSffZdqfpqDU2SNoFvINLX4mXt1D6ZecxkhwcHmLj3QcL2cJ/aCxrTkUcaAa6EGmPK3Nfitygw=="
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <style>
+        @charset "utf-8";
+
+        /* CSS Document */
+        body {
+            margin: 0px;
+            padding: 0px;
+            /* background-color: #eef8ff; */
+        }
+
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            /* width: 300px; */
+            width: 200px;
+            /* box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2); */
+            border-radius: 10px;
+            overflow: hidden;
+            /* margin: 25px; */
+            margin: 15px 5px 0px 5px;
+        }
+
+        .slide-img {
+            /* height: 450px; */
+            height: 280px;
+            position: relative;
+        }
+
+        .slide-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-sizing: border-box;
+        }
+
+        .detail-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            font-family: calibri;
+        }
+
+        .type {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .type a {
+            color: #222222;
+            margin: 5px 0px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding-right: 8px;
+        }
+
+        .type span {
+            color: rgba(26, 26, 26, 0.5);
+        }
+
+        .price {
+            color: #333333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: poppins;
+            letter-spacing: 0.5px;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(92, 95, 236, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buy-btn {
+            width: 160px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFFFF;
+            color: #252525;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: calibri;
+            border-radius: 20px;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .buy-btn:hover {
+            color: #FFFFFF;
+            background-color: #f15fa3;
+            transition: all ease 0.3s;
+        }
+
+        .overlay {
+            visibility: hidden;
+        }
+
+        .slide-img:hover .overlay {
+            visibility: visible;
+            animation: fade 0.5s;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .slider ,
+        .slider-2 {
+            width: 100%;
+            /* height: 100vh; */   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 15px;
+        }
+
+        .lSAction > .lSPrev {
+            right: 50px;
+            background-image: url(img/back.png);
+            background-color: var(--light-pink);
+        }
+
+        .lSAction > .lSNext {
+            background-image: url(img/arrow-point-to-right_B.png);
+            background-color: var(--light-pink);
+            opacity: 1;
+        }
+
+        .lSAction > a {
+            opacity: 1;
+           
+            top: 20px;
+        }
+
+        #autoWidth {
+            margin-top: 30px;
+        }
+
+        #autoWidth-2 {
+            margin-top: 38px;
+        }
+    </style>
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="header-top">
+        <div class="container-fluid">
+            <div class="ht-left">
+                <div class="mail-service">
+                    <p class="awesome">Your One Stop Place For Modest Fashion</p>
+                    <!-- <i class=" fa fa-envelope"></i>
+                    hello.modasty@gmail.com -->
+                </div>
+                <!-- <div class="phone-service">
+                    <i class=" fa fa-phone"></i>
+                    +65 11.188.888
+                </div> -->
+            </div>
+            <div class="ht-right">
+                <div class="top-social">
+                    <!-- <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-instagram"></i></a>
+                    <a href="#"><i class="ti-pinterest"></i></a>
+                    <a href="#"><i class="ti-linkedin"></i></a> -->
+                    <a href="#" class="">Join</a>
+
+                    <a href="#" class=""></i>Sign in</a>
+
+                    <a href="#" class=""></i>Help</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="inner-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="img/modasty_68w.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-7">
+                    <div class="search">
+                        <form class="search-form">
+                            <input type="text" placeholder="Search for modest fashion">
+                            <input type="submit" value="SEARCH">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-3">
+                    <ul class="nav-right" id="nav-right">
+                        <li class="heart-icon">
+                            <a href="#">
+                                <i class="icon_heart_alt"></i>
+                                <span>1</span>
+                            </a>
+                        </li>
+                        <li class="cart-icon">
+                            <a href="#">
+                                <!-- <i class="icon_bag_alt"></i> -->
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>3</span>
+                            </a>
+                            <div class="cart-hover">
+                                <div class="select-items">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>$60.00 x 1</p>
+                                                        <h6>Kabino Bedside Table</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i class="ti-close"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>$60.00 x 1</p>
+                                                        <h6>Kabino Bedside Table</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i class="ti-close"></i>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="select-total">
+                                    <span>total:</span>
+                                    <h5>$120.00</h5>
+                                </div>
+                                <div class="select-button">
+                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="heart-icon">
+                            <a href="#"><i class="far fa-user"></i></a>
+
+                        </li>
+
+                        <!-- <li class="cart-price">$150.00</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class=" navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" id="dropdownMenuLink" type="button" data-toggle="collapse"
+                data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mobile_nav">
+
+                <ul class="navbar-nav navbar-light" id="dmenuRemoveFunction">
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li> -->
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item dmenu dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                    </a>
+                    <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Software Development</a>
+                        <a class="dropdown-item" href="#">Web Designing & Development</a>
+                        <a class="dropdown-item" href="#">Mobile Application</a>
+                        <a class="dropdown-item" href="#">Business Solutions & Business Process</a>
+                        <a class="dropdown-item" href="#">Digital Marketing & SEO Services</a>
+                        <a class="dropdown-item" href="#">Web Hosting & Maintenance</a>
+                        <a class="dropdown-item" href="#">Cyber Security</a>
+                        <a class="dropdown-item" href="#">Block Chain Implementation</a>
+                        <a class="dropdown-item" href="#">Big Data</a>
+                    </div>
+                </li> -->
+                    <!--========-->
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--=========-->
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown megamenu-li dmenu">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3 border-right mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                                <div class="col-sm-6 col-lg-3  mb-4">
+                                    <h6>Black</h6>
+                                    <a class="dropdown-item" href="#"> Black Chiffon Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Jersey Hijab</a>
+                                    <a class="dropdown-item" href="#"> Black Athletic Wear</a>
+                                    <a class="dropdown-item" href="#"> Black Prom Dress</a>
+                                    <a class="dropdown-item" href="#"> Black Nikkah Dress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Header End -->
+
+<!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="hero-items owl-carousel">
+        <div class="single-hero-items set-bg" data-setbg="img/bg-3.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>Abaya, Gowns, Dresses and More......</span>
+                        <h1>Black friday</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore</p>
+                        <a href="#" class="primary-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-items set-bg" data-setbg="img/bg-22.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>Your Everyday Essentials</span>
+                        <h1>Hijabs</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore</p>
+                        <a href="#" class="primary-btn">Shop Now</a>
+                    </div>
+                </div>
+                <!-- <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+
+<!-- Women Banner Section Begin -->
+<section class="women-banner spad">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-lg-3">
+                <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+                    <h2>Women’s</h2>
+                    <a href="#">Discover More</a>
+                </div>
+            </div> -->
+            <div class="col-lg-12 ">
+                <div class="filter-control">
+                    <ul>
+                        <li class="active">Trending right now</li>
+
+                    </ul>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</section>
+<div class="fluid-container">
+    <div id="blogSlider">
+        <div class="MS-content">
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="MS-controls">
+            <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+            <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>
+<!-- Women Banner Section End -->
+
+    <div class="pro" id="pro">
+        <section class="slider">
+            <ul id="autoWidth" class="cs-hidden">
+                <!--1------------------------------------>
+                <li class="item-a">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="1" src="img/products/m.jpg">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$23</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--2------------------------------------>
+                <li class="item-b">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="2" src="images/2.jpg">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$20</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--3------------------------------------>
+                <li class="item-c">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="3" src="images/3.jpg">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$26</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--4------------------------------------>
+                <li class="item-d">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="4" src="images/4.jpg">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$27</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--5------------------------------------>
+                <li class="item-e">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="5" src="images/5.jpg">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$26</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--6------------------------------------>
+                <li class="item-f">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="6" src="images/6.jpg">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$30</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--7------------------------------------>
+                <li class="item-g">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="7" src="images/7.jfif">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$33</a>
+
+                        </div>
+
+                    </div>
+                </li>
+                <!--8------------------------------------>
+                <li class="item-h">
+                    <!--box-slider--------------->
+                    <div class="box">
+                        <!--img-box---------->
+                        <div class="slide-img">
+                            <img alt="8" src="images/8.jfif">
+                            <!--overlayer---------->
+                            <div class="overlay">
+                                <!--buy-btn------>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <!--detail-box--------->
+                        <div class="detail-box">
+                            <!--type-------->
+                            <div class="type">
+                                <a href="#">Rabbed Cardigan</a>
+                                <span>Noe Arrival</span>
+                            </div>
+                            <!--price-------->
+                            <a href="#" class="price">$43</a>
+
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+    </div>
+
+    <section class="slider-2">
+        <ul id="autoWidth-2" class="cs-hidden">
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="product/m.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">Sale</span>
+                        <span class="product-discount-label">50%</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Casandra Dress</a></h3>
+                        <div class="price">
+                            CA$100
+                            <span>CA$150</span>
+                        </div>
+                        <a class="add-to-cart" href="">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </section>
+
+    <section class="section-services" id="section-services">
+        <div class="container">
+            <div class="row">
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <h1>1</h1> <br>
+                            <h2 class="title">Why Modasty?</h2> <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ullam dolorem, rerum
+                                ad
+                                tenetur temporibus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <h1>2</h1> <br>
+                            <h2 class="title">Shopping on Modasty</h2> <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ullam dolorem, rerum
+                                ad
+                                tenetur temporibus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="single-service">
+                        <div class="part-1">
+                            <h1>3</h1> <br>
+                            <h2 class="title">Becoming a Modasty Member</h2> <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae ullam dolorem, rerum
+                                ad
+                                tenetur temporibus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- / End Single Service -->
+            </div>
+            <br><br>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="header-section">
+                        <!-- <h2 class="title">Exclusive <span>Services</span></h2>
+						<p class="description">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected humour</p>
+                     -->
+                        <a href="#" class="primary-btn">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Partner Logo Section Begin -->
+    <div class="partner-logo ">
+        <div class="container">
+            <div class="logo-carousel owl-carousel">
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/momina.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/nisa.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/rayhanaco.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/modah.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/modestylc.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/modestylc.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/momina.webp" alt="">
+                    </div>
+                </div>
+                <div class="logo-item">
+                    <div class="tablecell-inner">
+                        <img src="img/brands/nisa.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partner Logo Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/modasty_small.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 Canada</li>
+                            <li>Phone: +12 11.188.888</li>
+                            <li>Email: hello.modasty@gmail.com</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Serivius</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>My Account</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Join Our Newsletter Now</h5>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="text" placeholder="Enter Your Mail">
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-reserved">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                            <!-- Link back to modasty can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved
+                            <!-- | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://modasty.com" target="_blank">modasty</a> -->
+                            <!-- Link back to modasty can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <!-- <div class="payment-pic">
+                            <img src="img/payment-method.png" alt="">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+  
+    <script src="js/bootstrap.min.js"></script>
+   
+    <script src="js/jquery.slicknav.js"></script> <!-- For hero slider-->
+    <script src="js/owl.carousel.min.js"></script> <!-- For hero slider-->
+    <script src="js/main.js"></script>
+
+    <!-- 
+        <script src="js/multislider.min.js"></script> 
+    -->
+    <script src="js/custom.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            if ($(window).width() >= 769) {
+                $('.navbar-light .dmenu').hover(function () {
+                    $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+                }, function () {
+                    $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+                });
+            }
+        });
+
+
+        $(document).ready(function () {
+            $(".megamenu").on("click", function (e) {
+                e.stopPropagation();
+            });
+        })
+        //     $(document).ready(function(){
+
+        // if ($(window).width() <= 768) {  
+        // $(".navbar-light").removeClass("dmenu");
+        // }           
+        // });     
+        //});
+       
+
+        $(document).ready(function () {
+            $('#blogSlider').multislider({
+            duration: 1000,
+            // from 750
+            interval: 3000
+        });
+        
+        })     
+    
+
+    
+    </script>
+
+
+    <!--script-link----------->
+
+    <script>
+
+        $(document).ready(function () {
+            $('#autoWidth').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoWidth').removeClass('cS-hidden');
+                }
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('#autoWidth-2').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoWidth-2').removeClass('cS-hidden');
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
